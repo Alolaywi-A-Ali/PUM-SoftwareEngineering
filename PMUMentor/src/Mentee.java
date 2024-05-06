@@ -6,4 +6,15 @@ public class Mentee extends User{
         super(name, email, password, phoneNumber);
         this.mentors = mentors;
     }
+
+    @Override
+    public String toString() {
+        return "Mentee{" +
+                "mentors=" + mentors +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }

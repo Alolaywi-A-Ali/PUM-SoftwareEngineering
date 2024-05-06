@@ -4,4 +4,14 @@ public class Mentor extends User{
         super(name, email, password, phoneNumber);
         this.major = major;
     }
+    @Override
+    public String toString() {
+        return "Mentor{" +
+                "major='" + major + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
