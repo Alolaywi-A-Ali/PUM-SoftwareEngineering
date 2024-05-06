@@ -165,4 +165,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getName() {
+        return name;
+    }
 }

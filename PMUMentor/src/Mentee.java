@@ -1,20 +1,23 @@
 import java.util.HashSet;
 
 public class Mentee extends User{
-    HashSet<Mentor> mentors = new HashSet<>();
-    public Mentee(String name, String email, String password, String phoneNumber, HashSet<Mentor> mentors){
+    static HashSet<Mentor> mentors = new HashSet<>();
+    public Mentee(String name, String email, String password, String phoneNumber){
         super(name, email, password, phoneNumber);
-        this.mentors = mentors;
+    }
+    public static void addMentor(Mentor mentor){
+        mentors.add(mentor);
+        System.out.println("You added "+mentor.getName()+" successfully.");
+    }
+    public static void startChat(){
+        //add logic
+    }
+    public static void scheduleMeeting(){
+        //add logic
     }
 
-    @Override
-    public String toString() {
-        return "Mentee{" +
-                "mentors=" + mentors +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+    public static void removeMentor(Mentor mentor){
+        mentors.remove(mentor);
+        System.out.println("You removed "+mentor.getName()+" successfully.");
     }
 }
