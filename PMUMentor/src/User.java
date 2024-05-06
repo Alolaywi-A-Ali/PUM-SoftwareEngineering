@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -19,11 +18,10 @@ public class User {
     }
 
     public static void main(String[] args) {
-        boolean loopControl = true;
-        while (loopControl){
+        while (true) {
             printMainMenu();
             int userInput = input.nextInt();
-            switch (userInput){
+            switch (userInput) {
                 case 1:
                     createAccountRequest();
                     break;
@@ -40,10 +38,9 @@ public class User {
         }
     }
     public static void createAccountRequest(){
-        boolean isUser = false;
         System.out.println("Do you have an account? (Y/N):");
         if (input.next().equalsIgnoreCase("Y")){
-            isUser = true;
+            loginRequest();
         }
         System.out.println("Please enter your PMU e-mail: ");
         String email = input.next();
@@ -113,9 +110,10 @@ public class User {
     }
     public static boolean login(String email, String password){
         for (Mentor user: mentors){
-            if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equalsIgnoreCase(password))
+            if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equalsIgnoreCase(password)){
                 currentUser = user;
                 return true;
+            }
         }
 
         for (Mentee user: mentees){
@@ -148,10 +146,9 @@ public class User {
         System.out.println("Please enter your new password: ");
         changePassword(input.next());
     }
-    public static boolean changePassword(String password){
+    public static void changePassword(String password){
         currentUser.setPassword(password);
         System.out.println("Password have been successfully changed.");
-        return true;
     }
     public static void printMainMenu(){
         System.out.println("Login or Register");
